@@ -140,7 +140,7 @@ for (let i = 0; i < randomNumbers.length; i++) {
 }
 
 // cuando usamos forEach
-// -  Cuando SIEMPRE queremos iterar sobre todos los elementos, y no va a ocurrir algun break
+// - Cuando SIEMPRE queremos iterar sobre todos los elementos, y no va a ocurrir algun break
 
 
 // cuando usamos bucle tradicional for o for of
