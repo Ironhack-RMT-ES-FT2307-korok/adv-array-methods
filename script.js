@@ -111,8 +111,37 @@ console.log(someString.repeat(10))
 
 let randomNumbers = [ 4, 8, 15, 16, 23, 42 ];
 
-function hacerAlgo( cadaElemento, index ) {
+
+
+// randomNumbers.forEach(function ( cadaElemento, index ) {
+//   console.log("probando funcion hacerAlgo", cadaElemento, index)
+// } )
+
+
+randomNumbers.forEach( ( cadaElemento, index ) => {
   console.log("probando funcion hacerAlgo", cadaElemento, index)
+  if ( cadaElemento % 2 === 0) {
+    console.log( `el numero ${cadaElemento} es par` )
+  }
+  if ( cadaElemento === 42 ) {
+    console.log( `la respuesta a la vida, al universo y a todo lo demas` )
+  }
+} )
+
+// ejemplo con bucle tradicional
+for (let i = 0; i < randomNumbers.length; i++) {
+  console.log("probando funcion hacerAlgo", randomNumbers[i], i)
+  if ( randomNumbers[i] % 2 === 0) {
+    console.log( `el numero ${randomNumbers[i]} es par` )
+  }
+  if ( randomNumbers[i] === 42 ) {
+    console.log( `la respuesta a la vida, al universo y a todo lo demas` )
+  }
 }
 
-randomNumbers.forEach( hacerAlgo )
+// cuando usamos forEach
+// -  Cuando SIEMPRE queremos iterar sobre todos los elementos, y no va a ocurrir algun break
+
+
+// cuando usamos bucle tradicional for o for of
+// - Cuando en algun momento queremos detener el bucle
