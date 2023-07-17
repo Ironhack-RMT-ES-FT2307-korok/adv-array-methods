@@ -334,3 +334,145 @@ let namesOfPeople = people.reduce((acc, eachPerson) => {
 }, "")
 
 console.log(namesOfPeople)
+
+
+// Iteration 1: Return the total population of the given array (data) in the function 'totalpopulation' created below for you
+// the function must return 0 if the array is empty
+const data = [
+  {
+    country: 'USA',
+    pop: 340,
+  },
+  {
+    country: 'France',
+    pop: 133,
+  },
+  {
+    country: 'Bosnia',
+    pop: 5,
+  }
+]
+
+function totalpopulation(arr) {
+  // let arr = [
+  //   {
+  //     country: 'USA',
+  //     pop: 340,
+  //   },
+  //   {
+  //     country: 'France',
+  //     pop: 133,
+  //   },
+  //   {
+  //     country: 'Bosnia',
+  //     pop: 5,
+  //   }
+  // ]
+  console.log(arr)
+   // since we are calculating total, initial value of accumulator is set to 0
+
+   let total = arr.reduce((acc, elem) => {
+    // let acc = 0;
+    // let elem = {
+    //     country: 'USA',
+    //     pop: 340,
+    //   }
+    console.log(acc, elem)
+    return acc + elem.pop
+   }, 0)
+  return total;
+}
+
+//Invoking and running the function
+let total2 = totalpopulation(data)
+console.log(total2) // console output should be 478
+
+let output = totalpopulation([])
+console.log(output) // console output should be 0
+
+
+
+// .reverse()
+
+let orderedNumbers = [1, 2, 3, 4, 5];
+
+// con metodos como sort y reverse debemos hacer un clon para evitar mutar el array original
+
+let clone = JSON.parse( JSON.stringify(orderedNumbers) )
+// la forma más perfecta de clonar un array
+
+console.log(JSON.stringify(orderedNumbers) === JSON.stringify(clone))
+console.log(JSON.parse( "[1, 2, 3]" ))
+
+clone.reverse()
+// MUTA el array original
+
+// console.log(reverseNumbers)
+console.log("clone", clone)
+console.log("original", orderedNumbers)
+
+
+// .sort()
+// muta el array original
+
+let someLetters = [ "a", "z", "d", "h", "f" ];
+
+let cloneLetters = JSON.parse( JSON.stringify(someLetters) )
+
+cloneLetters.sort()
+
+console.log(cloneLetters)
+
+
+
+let someNumbers = [ 4, 10, 100, 2, 45 ]
+
+let cloneNumbers = JSON.parse( JSON.stringify(someNumbers) )
+
+cloneNumbers.sort((elem2, elem1) => {
+  // comparando dos elementos para determinar si una va antes o despues
+  console.log(elem2, elem1)
+
+  // retornar un valor numero
+  // negativo => el segundo va antes
+  // positivo => el primero va antes
+  // 0 => no hay cambio en el orden
+
+  if (elem2 > elem1) {
+    return -1
+  } else if (elem2 < elem1) {
+    return 1
+  } else {
+    return 0
+  }
+
+})
+
+console.log(cloneNumbers)
+
+
+
+
+let people2 = [
+  { name: "Pedro", candy: 20 },
+  { name: "Antonia", candy: 25 },
+  { name: "Antonio", candy: 25 },
+  { name: "Antonia", candy: 25 },
+  { name: "Ruth", candy: 10 },
+  { name: "Ásis", candy: 0 }
+]
+
+people2.sort((elem2, elem1) => {
+  if (elem2.name > elem1.name) {
+    return 1
+  } else if (elem2.name < elem1.name) {
+    return -1
+  } else {
+    return 0
+  }
+
+  // return elem2.name.localeCompare(elem1.name) * -1 // o 0 o 1
+
+})
+
+console.log(people2)
