@@ -266,6 +266,9 @@ let filteredCars = cars.filter((eachCar) => {
   } else {
     return false // no lo añadas al array
   }
+
+  // forma reducida de hacer lo mismo que arriba
+  // return eachCar.year > 2010
 })
 
 console.log(filteredCars)
@@ -275,3 +278,59 @@ console.log(filteredCars)
 // SELF_GUIDED
 // filtra un solo elemento del array
 // no retorna un array => retorna el elemento
+
+
+
+let numbers = [10, 3, 12, 8, 6];
+
+// quiero buscar la suma de todos los numeros de array
+
+// let acumulador = 0;
+
+// for (let i = 0; i < numbers.length; i++) {
+//   acumulador = acumulador + numbers[i]
+// }
+
+// console.log(acumulador)
+
+// reduce()
+
+let acumuladorFinal = numbers.reduce((acumulador, eachElement) => {
+  console.log(acumulador, eachElement)
+
+  // el reduce espera que nosotros retornemos como va modificandose el acumulador
+  return acumulador + eachElement
+}, 0)
+// como segundo argumento de reduce, agregamos el valor inicial del acumulador
+
+console.log(acumuladorFinal)
+
+
+let people = [
+  { name: "Pedro", candy: 20 },
+  { name: "Antonio", candy: 25 },
+  { name: "Ruth", candy: 10 },
+  { name: "Jorge" }
+]
+
+let total = people.reduce( (acc, eachPerson) => {
+  
+  if (eachPerson.candy !== undefined) {
+    return acc + eachPerson.candy
+  } else {
+    return acc // retornamos el acumulador sin ningun cambio
+  }
+
+}, 0 )
+
+
+console.log(total)
+
+
+let namesOfPeople = people.reduce((acc, eachPerson) => {
+
+  return acc + eachPerson.name + " "
+
+}, "")
+
+console.log(namesOfPeople)
