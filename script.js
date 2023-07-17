@@ -189,3 +189,89 @@ function numbersAsStrings( unArray ) {
 
 console.log( numbersAsStrings(randomNumbers) )
 console.log( numbersAsStrings([10, 20, 35]) )
+
+
+// iteracion 3
+
+// Iteration  3: Return only the names of the restaurants 
+// Note: Be careful here. 'info' is an object with a key called 'list' which is the array
+ 
+const info = {
+  list: [
+    {name: 'Mirazur', owner : 'Gustavo'},
+    {name: 'Noma', owner : 'Taka'},
+    {name: 'Gaggan', owner : 'Alvaro'},
+    {name: 'Geranium', owner : 'Gustavo'},
+    {name: 'Arpège', owner : 'Luis'},    
+ ]  
+}
+
+
+function onlyNames(arr) {
+ //your code here
+  // console.log(arr)
+  let namesArr = arr.map((eachRestaurant) => {
+    return eachRestaurant.name
+  })
+  // console.log(namesArr)
+
+  return namesArr
+}
+
+// test
+const restaurants = onlyNames( info.list )
+// console.log(restaurants)
+// Output should be [ 'Mirazur', 'Noma', 'Gaggan', 'Geranium', 'Arpège']
+
+
+// ...
+// de una forma especifica enviarlo a la visualizaion
+
+
+const cars = [
+  { brand: "Mercedes-Benz", year: 2012, weight: 0.8 },
+  { brand: "Porsche", year: 2020, weight: 1.3 },
+  { brand: "Bugatti", year: 2003, weight: 0.5 },
+  { brand: "Volvo", year: 2010, weight: 1.9 },
+  { brand: "Smart", year: 2010, weight: 0.1 },
+];
+
+// filtrarlos
+
+// un nuevo array solo con los coches de 2011 en adelante
+
+let newCars = cars.map((eachCar) => {
+  if (eachCar.year > 2010) {
+    return eachCar
+  }
+  // else {
+  //   return undefined
+  // }
+})
+
+console.log(newCars)
+
+// map SIEMPRE devuelve un array con la misma cantidad de elementos que el array original
+
+
+// filter()
+
+let filteredCars = cars.filter((eachCar) => {
+  console.log(eachCar) // ejecuta una accion por cada elemento del array
+  // el filter SIEMPRE espera que devolvamos true o false
+  // true => añade el elemento por el cual estamos iterando
+  // false => no añadas el elemento por el cual estamos iterando
+  if (eachCar.year > 2010) {
+    return true // añadelo al array
+  } else {
+    return false // no lo añadas al array
+  }
+})
+
+console.log(filteredCars)
+
+
+// find()
+// SELF_GUIDED
+// filtra un solo elemento del array
+// no retorna un array => retorna el elemento
