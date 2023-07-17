@@ -117,7 +117,6 @@ let randomNumbers = [ 4, 8, 15, 16, 23, 42 ];
 //   console.log("probando funcion hacerAlgo", cadaElemento, index)
 // } )
 
-
 randomNumbers.forEach( ( cadaElemento, index ) => {
   console.log("probando funcion hacerAlgo", cadaElemento, index)
   if ( cadaElemento % 2 === 0) {
@@ -145,3 +144,48 @@ for (let i = 0; i < randomNumbers.length; i++) {
 
 // cuando usamos bucle tradicional for o for of
 // - Cuando en algun momento queremos detener el bucle
+
+
+// .map()
+// 1. hacer una ejecucion por cada elemento
+// 2. retorna un nuevo array con cada uno de los elementos retornados dentro del callback
+
+// crear un nuevo array con todos los numeros pero multiplicados por 100
+
+// let newArr = [];
+
+// randomNumbers.forEach( (eachElement) => {
+//   newArr.push( eachElement * 100 )
+// } ) 
+
+// console.log(newArr)
+
+let newArray = randomNumbers.map( (eachElement) => {
+  console.log(eachElement)
+  // en el map yo SIEMPRE voy a retornar cada elemento modificado
+  return eachElement * 100 // retorno lo que quiero que sea cada elemento del nuevo array
+} )
+
+console.log(newArray)
+console.log(randomNumbers) // original sin modificaciones
+
+
+// el forEach SIEMPRE retorna
+
+// map con funciones
+
+// funcion que recibe un array de numeros y devuelve un array de los numeros convertidos a string.
+
+function numbersAsStrings( unArray ) {
+
+  let strings = unArray.map((eachNumber) => {
+    return `El numero: ${eachNumber}`
+  })
+
+  // console.log(strings)
+  return strings
+}
+
+
+console.log( numbersAsStrings(randomNumbers) )
+console.log( numbersAsStrings([10, 20, 35]) )
